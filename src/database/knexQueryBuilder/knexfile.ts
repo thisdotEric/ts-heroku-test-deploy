@@ -23,7 +23,7 @@ const configs = {
 
     production: {
         client: 'postgresql',
-        connection: process.env.PG_REMOTE_DB_CONNECTION_STRING,
+        connection: process.env.DATABASE_URL,
         ssl: false,
         pool: {
             min: 2,
