@@ -9,5 +9,6 @@ export async function seed(knex: Knex): Promise<void> {
     { id: 0, name: 'Love so right', artist: 'BeeGees', year: '1980' },
     { name: "Don't throw it all away", artist: 'BeeGees', year: '1969' },
     { name: 'How deep is your love', artist: 'BeeGees', year: '1990' },
+    { name: 'Always and Forever', artist: 'Heatwave', year: '1965' },
   ]);
 }
