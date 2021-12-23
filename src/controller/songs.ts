@@ -1,10 +1,13 @@
 import { Request, Response } from 'express';
+import db from '../database/db';
 
 class SongController {
   async getAllSongs(req: Request, res: Response) {
-    const songs = [{ name: 'Time will reveal', artist: 'DeBarge' }];
+    //    const songs = [{ name: 'Time will reveal', artist: 'DeBarge' }];
 
-    res.status(200).send(songs);
+    const songsList = await db.getDbInstance()('songs').select('*');
+
+    res.status(200).send(songsList);
   }
 }
 
