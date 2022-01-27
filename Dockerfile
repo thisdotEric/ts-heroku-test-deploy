@@ -7,6 +7,7 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
+COPY tsconfig.json ./tsconfig.json
 
 # Build the TS to JS
 RUN npm run build
