@@ -10,6 +10,8 @@ RUN npm install
 
 ADD . ./app
 
+RUN ls -la
+
 # Build the TS to JS
 RUN npm run build
 
