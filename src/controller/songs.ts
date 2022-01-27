@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import db from '../database/db';
 
 class SongController {
-  async getAllSongs(req: Request, res: Response) {
+  async getAllSongs(_: Request, res: Response) {
     //    const songs = [{ name: 'Time will reveal', artist: 'DeBarge' }];
 
     const songsList = await db.getDbInstance()('songs').select('*');
