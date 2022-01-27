@@ -9,6 +9,8 @@ RUN npm install
 
 COPY . .
 
+RUN ls
+
 # Build the TS to JS
 RUN npm run build
 
