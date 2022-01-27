@@ -8,9 +8,7 @@ WORKDIR /app
 
 RUN npm install
 
-ADD . ./app
-
-RUN ls -la
+COPY . ./app
 
 # Build the TS to JS
 RUN npm run build
