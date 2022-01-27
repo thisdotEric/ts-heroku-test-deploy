@@ -1,6 +1,6 @@
 FROM node:16
 
-WORKDIR /app
+WORKDIR /usr/app
 
 COPY package*.json tsconfig.json ./
 
@@ -11,5 +11,7 @@ COPY . .
 # Build the TS to JS
 RUN npm run build
 
+WORKDIR /dist
+
 EXPOSE 3005
-RUN npm run start
+CMD node index.js
