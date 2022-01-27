@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev src/app.ts",
-    "build": "tsc",
+    "build": "tsc -p .",
     "postinstall": "npm run build",
     "prod-dbMigrations": "npm run prod-knex:migrate:rollback_all && npm run prod-knex:migrate:latest && npm run prod-knex:seed:run",
     "start": "node dist/src/app.js",
