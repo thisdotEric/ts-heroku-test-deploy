@@ -1,18 +1,19 @@
 FROM node:16
 
-WORKDIR /app
+ADD package.json ./app/package.json
+ADD tsconfig.json ./app/tsconfig.json
+ADD package-lock.json ./app/package-lock.json
 
-COPY package*.json ./
-COPY tsconfig.json ./
+WORKDIR /app
 
 RUN npm install
 
-COPY . .
-
-RUN ls
+ADD . ./app
 
 # Build the TS to JS
 RUN npm run build
 
+WORKDIR /app/dist
+
 EXPOSE 3005
-RUN node /dist/src/app.js
+RUN node /src/app.js
