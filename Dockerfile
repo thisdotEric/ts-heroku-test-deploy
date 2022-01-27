@@ -1,8 +1,10 @@
 FROM node:16
 
-WORKDIR /usr/app
+WORKDIR /app
 
-COPY package*.json tsconfig.json ./
+COPY ./package.json .
+COPY ./package-lock.json .
+COPY ./tsconfig.json .
 
 RUN npm install
 
