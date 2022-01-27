@@ -2,15 +2,15 @@ FROM node:16
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package*.json yarn.lock./
 
-RUN npm install
+RUN yarn install
 
 COPY . .
-COPY tsconfig.json ./tsconfig.json
+COPY tsconfig.json ./
 
 # Build the TS to JS
-RUN npm run build
+RUN yarn build
 
 WORKDIR /dist
 
